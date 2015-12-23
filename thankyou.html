@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Deja Vu by You</title>
+</head>
+
+	<!-- <script type="text/javascript" src="https://js.stripe.com/v1/"></script> -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="scripts/wufoo.js"></script>
+	
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+	<!-- CSS -->
+    <link href="css/structure.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="all.css" />
+
+<body>
+
+<div class="container">
+	
+    <div style="text-align:center">
+            	<img src="images/Deja-vu-logo.png" />
+            <div style="position:relative; margin-top:-95px;left:40px;">
+           		<img src="images/dejavu_logo_tag.png" />
+                <span style="padding-left:60px;"></span>
+                	<a href="#" class="flop">	
+                    	<img src="images/lever-up.png" />
+                    </a>
+            </div>
+            
+    </div>
+</div>
+
+<div class="flip-box" id="flipper">
+
+<img src="images/ThankYouHeadline.png" />
+
+<br /><br /><br />
+	<h2 style="font-family:Verdana, Geneva, sans-serif;  font-size:12px; font-weight:100; letter-spacing:.3em; line-height:36px; color:#FFF;">YOUR POSTCARD IS CURRENTLY BEING TRANSPORTED THROUGH THE FABRIC OF SPACE AND TIME.<br />
+YOU'LL RECEIVE A CONFIRMATION EMAIL SHORTLY.</h2><br /><br />
+
+
+
+<a href="https://twitter.com/intent/tweet?screen_name=DejaVuByYou&text=-%20I%20just%20sent%20myself%20a%20postcard...%20in%20the%20future!%20http://www.DejaVuByYou.com" class="twitter-mention-button" data-size="large" data-related="DejaVuByYou"><img src="images/thankyouTweet.png" width="199" height="56" /></a>
+<br /><br /><br />
+    
+</div>
+    
+    <div style="width:100%; background-color:#E33916; margin-top:50px; padding:10px 0px;">
+		<p>3 x 5" POSTCARDS WRITTEN AND CUSTOMIZED BY YOU. SENT BACK IN THE FUTURE.</p>
+        <!-- <p>ABOUT US  |  FAQ  |  CONTACT</p> -->
+        <p>&copy; DEJAVUBYYOU.COM</p>
+    </div>
+
+</div>
+<!-- end of container -->
+
+<script>
+    $(document).ready(function(){
+		
+//		var randomImage = [
+//							"images/postcard-front.jpg",
+//							"images/postcard-front-chicago.jpg",
+//							"images/postcard-front-fl.jpg",
+//							"images/postcard-front-la.jpg",
+//							"images/postcard-front-nyc.jpg",
+//							"images/postcard-front-portland.jpg",
+//							"images/postcard-front-sf.jpg"
+//						  ];
+//		
+
+		// set 'i' for counting
+		var i = 0;
+//		
+//		$('a.flop img').hover(function(){
+//			$(this).attr('src','images/lever-down.png');
+//		});
+		
+		$('.flop, .flop-continue').click(function(e){
+			
+			//_gaq.push(['_trackEvent', 'Card', 'Flip', 'Flipped']);
+			
+			//iterate 'i'
+			i++;
+			
+			//turns the lever down
+			$('a.flop img').attr('src','images/lever-down.png');
+			
+			//Hide text live views when flipped
+			//$('#noteLiveView,#nameLiveView').fadeOut(1000).hide();
+						
+			//when flipper is clicked toggle class to flip card
+			$('#flipper').toggleClass('flip');
+						
+			//select a new random image
+			//$('.back img').attr( "src", randomImage[Math.floor(Math.random() * randomImage.length)] ); 
+			$('.back img').attr( 'src', 'images/postcard-back.png' ); 
+			
+				// check i count, if 2 show names
+				if (i % 2 == 0) {
+					
+					//show fields by fading in
+					//$('#fieldView').fadeIn(2000).show();
+					
+					$('a.flop img').attr('src','images/lever-up.png');
+					//set counter back to zero
+					i == 0;
+					
+				} //end of if statement
+			e.preventDefault();
+		}); //end of 'click' function
+		
+    }); //end of DOCUMENT ready
+
+//GOOGLE TRACKING SCRIPT
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39763924-1', 'dejavubyyou.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

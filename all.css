@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body { margin:0; padding:0; font-family: 'Comic Sans MS'; font-size: 14px; background-image:url(images/bg-slide.gif); }
+
+img { max-width: 100%;height: auto; }
+
+.container { width:600px; margin: 0 auto; }
+
+.center { text-align:center; }
+
+p {font-family:Verdana, Geneva, sans-serif;  font-size:12px; font-weight:100; letter-spacing:.3em; line-height:36px; color:#FFF; }
+
+h1 {font-family:Verdana, Geneva, sans-serif; font-size:12px; font-weight:100; letter-spacing:.3em; }
+
+span.yellow { color:#FAD21A; font-weight:bold; }
+
+em { color:#E33917; }
+
+.logo-tag { position:relative; margin-top:-95px;left:40px;}
+
+.lever-link a {padding-left:60px;}
+
+.tag-line { text-align:center; color:white; padding: 0px; }
+
+#nameLiveView{ width: 263px; left: 30px; position: relative; top: 28px;}
+	
+#noteLiveView{ width: 263px; left: 30px; position: relative; top: 40px;}
+
+.back-form-overlay-left { position:relative; margin-top:-364px; left: 7px; width:300px; text-align:left; }
+
+.back-form-overlay-right { position:relative; top:-223px; left:328px; width:300px; }
+
+.back-form-overlay-right input { margin-bottom: 17px; }
+
+.price-badge { position:absolute; top:-40px; left:-50px; }
+
+.photo-upload { position:relative; top:-312px; left:296px; width:300px; }
+
+.photo-upload h1, .photo-upload input, .flip-container { margin-bottom:25px; }
+
+.delivery-text { border-bottom:1px solid #67747B; border-top:1px solid #67747B; }
+
+.delivery-text h1 { color:white; }
+
+.checkbox-bg div { position:relative; width:14px; }
+.checkbox-bg div:nth-child(2) { top:150px; left:104px; }
+.checkbox-bg div:nth-child(3) { top:133px; left:346px; }
+.checkbox-bg div:last-child { top:116px; left:588px; }
+
+#to-the-future button {-webkit-perspective: 1000; -webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg); }
+
+#to-the-future button:hover { -webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);-ms-transform: rotateY(0deg);-o-transform: rotateY(0deg);transform: rotateY(\0deg); }
+
+#footer { width:100%; background-color:#E33916; margin-top:50px; padding:10px 0px; }
+
+/* FLIPPING STYLES!!
+
+ entire container, keeps perspective */
+.flip-container {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
+}
+
+/* flip the pane when hovered */
+
+.flip {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	height: 385px;
+    width: 641px;
+	margin-left: -20px;
+}
+
+/* flip speed goes here */
+#flipper {
+	-webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	-ms-transition: 0.6s;
+	-o-transition: 0.6s;
+	transition: 0.6s;
+	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	position: relative;
+	 /*left: -38px;*/
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility:    hidden;
+  	-ms-backface-visibility:     hidden;
+	backface-visibility: 		 hidden;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	margin-left: 10px;
+}
+
+/* CUSOM FORM STYLES */
+input.title { margin-bottom:20px; }
+textarea.body { height:296px; }
+
+/* WUFOO HASH OUT BASH OUT PARTY CRASHING GOOD TIME */
+
+#header { display:none;}
+
+#lever-up {background-image:url(images/lever-up.png) top left; position:relative; margin-top:-125px; margin-left:418px; width:35px; height:130px; z-index:9999;}
+
+.checkbox-bg { background:url(images/when-selection-bg1.png) top left
+ no-repeat; width:677px; height:235px; position:relative; left:-67px; top: -4px; }
+ 
+ /*.checkbox-bg input {  margin: 174px 0 0 100px; }
+ 
+ .checkbox-bg input:nth-child(2) {margin: 174px 0 0 221px}
+ .checkbox-bg input:nth-child(3) {margin: 174px 0 0 221px} */
+ 
+ .submit-style {
+	border: none;
+	 margin: 0;
+	 padding: 0;
+	 width: 239px; height:56px;
+	 background: url(images/submit.png) 0 0 no-repeat; 
+	 cursor: pointer;
+ }
+ 
+input:focus {
+      border:1px solid #E33917;
+}
+
+.flop-continue a { background:url(images/continue-btn.png) top left; width:169px; height:57px;}
+.flop-continue a:hover { background:url(images/continue-btn-over.png) top left;}
+
+/*
+	WUFOO FORM STYLES
+}*/
+
+#logo {padding:10px 0px;}
+
+#container h1 {padding: 10px 38%;}
+
+/*
+	END WUFOO FORM STYLES
+}*/
+.flip-box {
+	background:url(images/thankyou-bg.png) 100% 112px no-repeat;
+	margin: 0 auto;
+    padding: 40px 0;
+    position: relative;
+    width: 600px;
+	}
+	
+#lever.fixed {
+    border-radius: 0 0 0 0;
+    left: 840px;
+    position: fixed;
+    top: 19px;
+    z-index: 10;
+}
