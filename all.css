@@ -1,19 +1,24 @@
 @charset "UTF-8";
 /* CSS Document */
 
-body { margin:0; padding:0; font-family: 'Comic Sans MS'; font-size: 14px; background-image:url(images/bg-slide.gif); }
+/* body { margin:0; padding:0; font-family: 'Comic Sans MS'; font-size: 14px; background-image:url(images/bg-slide.gif); } */
+body { margin:0; padding:0; background-color: rgba(129, 70, 124,1) }
+footer {background-color: #E33916; width:100%; margin-top:50px; padding:10px 0px; }
+footer p {font-size: 1rem}
 
-img { max-width: 100%;height: auto; }
-
-.container { width:600px; margin: 0 auto; }
+img { max-width: 100%; height: auto; padding-bottom: 25px;}
 
 .center { text-align:center; }
 
 p {font-family:Verdana, Geneva, sans-serif;  font-size:12px; font-weight:100; letter-spacing:.3em; line-height:36px; color:#FFF; }
 
-h1 {font-family:Verdana, Geneva, sans-serif; font-size:12px; font-weight:100; letter-spacing:.3em; }
+h1 {font-family:Verdana, Geneva, sans-serif; font-weight:100; letter-spacing:.3em; font-size: 4rem; color:#FAD21A;}
+h2 {font-family:Verdana, Geneva, sans-serif; font-size:12px; font-weight:100; letter-spacing:.3em; color: rgba(173, 160, 160, 1)}
 
-span.yellow { color:#FAD21A; font-weight:bold; }
+span.yellow { color:#FAD21A; }
+span.red { color:#FD2200; }
+span.blue { color:#00B0A6; }
+span.orange{ color: #E33916; }
 
 em { color:#E33917; }
 
@@ -47,6 +52,26 @@ em { color:#E33917; }
 .checkbox-bg div:nth-child(2) { top:150px; left:104px; }
 .checkbox-bg div:nth-child(3) { top:133px; left:346px; }
 .checkbox-bg div:last-child { top:116px; left:588px; }
+
+.example-text {position:absolute; bottom:204px; left:176px;}
+.pricetag {position:absolute; top:249px; left:93px;}
+
+button {background-color: #FAD21A;}
+
+   @media screen and (max-width: 1130px) {
+
+    .example-text{left: 175px;top: 400px; width: 50%;}
+
+    .pricetag{left: 16px;top: 369px;width: 180px;}
+
+    }
+    
+/* 
+	
+	OLD STYLES DOWN HERE 
+	
+	
+*/ 
 
 #to-the-future button {-webkit-perspective: 1000; -webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg); }
 
