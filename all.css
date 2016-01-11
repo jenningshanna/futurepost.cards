@@ -2,8 +2,9 @@
 /* CSS Document */
 
 /* body { margin:0; padding:0; font-family: 'Comic Sans MS'; font-size: 14px; background-image:url(images/bg-slide.gif); } */
-body {font-family:Verdana, Geneva, sans-serif; margin:0; padding:0; background-color: rgba(129, 70, 124,1) }
-footer {background-color: #63345F; width:100%; margin-top:50px; padding:10px 0px; }
+html {}
+body {font-family:Verdana, Geneva, sans-serif; margin:0; padding:0; /* background-color: rgba(129, 70, 124,1); */background-image: url('images/background.png'); -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment: scroll;}
+footer { width:100%; background-color: rgba(99, 52, 95, 0.5); margin-top:50px; padding:45px 0px 35px 0px; border-top: .1rem solid grey; box-shadow: 0px 5px 50px 15px black;}
 footer p {font-size: 1rem}
 
 img { max-width: 100%; height: auto; padding-bottom: 25px;}
@@ -14,6 +15,7 @@ p {font-size:12px; font-weight:100; letter-spacing:.3em; line-height:36px; color
 
 h1 {font-weight:100; letter-spacing:.3em; font-size: 4rem; color:#FAD21A;}
 h2 {font-size:12px; font-weight:100; letter-spacing:.3em; color: rgba(173, 160, 160, 1)}
+h3 {font-weight:100; letter-spacing:.3em; font-size: 3rem; border-bottom: .1rem solid rgba(255, 255, 255, 0.1); padding: 10px 0px 20px 0px;}
 
 small {font-size:12px; font-weight:100; letter-spacing:.3em; color: rgba(173, 160, 160, 1)}
 small.subscript {font-size: 0.8rem;}
@@ -22,8 +24,6 @@ span.yellow { color:#FAD21A; }
 span.red { color:#FD2200; }
 span.blue { color:#00B0A6; }
 span.orange{ color: #E33916; }
-
-em { color:#E33917; }
 
 .logo-tag { position:relative; margin-top:-95px;left:40px;}
 
@@ -54,6 +54,9 @@ em { color:#E33917; }
 .example-text {position:absolute; bottom:204px; left:176px;}
 .pricetag {position:absolute; top:249px; left:93px;}
 
+.table-bg {background: url("images/table-bg.png") no-repeat center top; padding-bottom: 25px;}
+
+div.table-bg div {padding: 30px 20px 20px 20px; margin-bottom: 20px; background-color: rgba(99, 52, 95, 0.5); border-radius: 5px; box-shadow: 11px 7px 12px rgba(0, 0, 0, 0.43)}
 
 /* 
 	
@@ -102,8 +105,6 @@ div.when-header {border-top:1px solid #FFF; padding-top: 20px;}
 #to-the-future button {-webkit-perspective: 1000; -webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg); }
 
 #to-the-future button:hover { -webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);-ms-transform: rotateY(0deg);-o-transform: rotateY(0deg);transform: rotateY(\0deg); }
-
-#footer { width:100%; background-color:#E33916; margin-top:50px; padding:10px 0px; }
 
 /* FLIPPING STYLES!!
 
