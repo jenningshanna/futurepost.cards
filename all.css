@@ -58,9 +58,21 @@ span.orange{ color: #E33916; }
 
 div.table-bg div {padding: 30px 20px 20px 20px; margin-bottom: 20px; background-color: rgba(99, 52, 95, 0.5); border-radius: 5px; box-shadow: 11px 7px 12px rgba(0, 0, 0, 0.43)}
 
+div.postcard {background: url('images/postcard-bg.png') no-repeat center top; min-height: 351px; background-size: cover; display: flex;}
+.postcard div {flex: 1;}
+.postcard p {font-family: 'Pacifico', cursive;}
+
+.postcard-note {padding: 35px 15px 0px 40px;}
+.postcard-addy {padding: 150px 0px 0px 0px;}
+.postcard-addy p {align-self: flex-end; position: relative}
+.postcard-addy div p:nth-child(2){top: -28px;left: 65px;}
+.postcard-addy div p:nth-child(3){top: -32px;}
+
+.postcard p {color: #333; line-height: normal; letter-spacing: normal; font-size: 1.3rem; text-align: left; margin-bottom: 1rem;}
+
 /* 
 	
-	FORM ELEMENTS AND HACKING WUFOO
+	FORM ELEMENTS AND HACKING WUFOO 
 	
 	
 */ 
