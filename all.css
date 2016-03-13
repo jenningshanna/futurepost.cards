@@ -56,19 +56,64 @@ span.orange{ color: #E33916; }
 
 .table-bg {background: url("images/table-bg.png") no-repeat center top; padding-bottom: 25px;}
 
-div.table-bg div {padding: 30px 20px 20px 20px; margin-bottom: 20px; background-color: rgba(99, 52, 95, 0.5); border-radius: 5px; box-shadow: 11px 7px 12px rgba(0, 0, 0, 0.43)}
+div.table-bg div.price-cols {padding: 30px 20px 20px 20px; margin-bottom: 20px; background-color: rgba(99, 52, 95, 0.5); border-radius: 5px; box-shadow: 11px 7px 12px rgba(0, 0, 0, 0.43)}
 
 div.postcard {background: url('images/postcard-bg.png') no-repeat center top; min-height: 351px; background-size: cover; display: flex;}
 .postcard div {flex: 1;}
-.postcard p {font-family: 'Pacifico', cursive;}
+.postcard p {font-family: 'Source Serif Pro', Georgia, cursive; font-weight: 100;}
 
-.postcard-note {padding: 35px 15px 0px 40px;}
-.postcard-addy {padding: 150px 0px 0px 0px;}
+.postcard-note {padding: 35px 15px 0px 40px;transform: rotate(-1.4deg);padding-right: 76px;}
+.postcard-addy {padding: 150px 0px 0px 0px;transform: rotate(-1.4deg);}
 .postcard-addy p {align-self: flex-end; position: relative}
-.postcard-addy div p:nth-child(2){top: -28px;left: 65px;}
 .postcard-addy div p:nth-child(3){top: -32px;}
 
 .postcard p {color: #333; line-height: normal; letter-spacing: normal; font-size: 1.3rem; text-align: left; margin-bottom: 1rem;}
+
+/* BUTTONS by Cheeriottis (http://codepen.io/cheeriottis/pen/inluv) */
+
+a.animate {
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+a.action-button {
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  color: #FFF;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+}
+
+div.price-button {min-height: 81px; padding: 0; margin: 0; border: none; border-radius: none; background: none; display: flex;justify-content: center;}
+
+.action-button:active {
+  transform: translate(0px, 4px);
+  -webkit-transform: translate(0px, 4px);
+  border-bottom: 1px solid transparent;
+}
+
+a.blue {
+  background-color: #00B0A6;
+  border-bottom: 5px solid #109A95;
+  text-shadow: 2px -3px #109A95;
+}
+
+a.yellow {
+  background-color: #FAD21A;
+  border-bottom: 5px solid #D7C700;
+  text-shadow: 2px -3px #D7C700;
+}
+
+a.red {
+  background-color: #FD2200;
+  border-bottom: 5px solid #C64021;
+  text-shadow: 2px -3px #C64021;
+}
 
 /* 
 	
