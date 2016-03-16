@@ -69,6 +69,8 @@ div.postcard {background: url('images/postcard-bg.png') no-repeat center top; mi
 
 .postcard p {color: #333; line-height: normal; letter-spacing: normal; font-size: 1.3rem; text-align: left; margin-bottom: 1rem;}
 
+label {padding-top: 5px;}
+
 /* BUTTONS by Cheeriottis (http://codepen.io/cheeriottis/pen/inluv) */
 
 a.animate {
