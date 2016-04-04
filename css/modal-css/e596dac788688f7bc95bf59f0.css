@@ -1,0 +1,179 @@
+///////////////////////////////
+// compass reset /////////////
+/////////////////////////////
+@import "compass/reset";
+
+///////////////////////////////
+// mixins ////////////////////
+/////////////////////////////
+
+//em conversion function
+@function em($px) { @return #{$px/16}em; }
+
+//media query mixin
+@mixin bp($bp, $min-max: min-width) {
+    @media(#{$min-max}: #{$bp/16}em) { @content; }
+}
+
+//mixin for responsive type
+@mixin flexType($vw, $min, $max ) {
+  $min-size: $min / ($vw / 100);
+  $max-size: $max / ($vw / 100);
+  //provide the minimum font-size
+  font-size: em($min);
+  
+  @include bp($min-size) {
+    //setting the responsive text
+    font-size: #{$vw}vw;
+  }
+  
+  @include bp($max-size) {
+    //change out for max number
+    font-size: em($max);
+  }
+}
+
+//grid mixin
+@mixin grids($column-num, $vert: top) {
+    $col-width: 65px;
+    $gutter-width: 20px;
+    $columns: 12;
+    // Set container width
+	$width: ($col-width * $columns) + ($gutter-width * ($columns - 1));
+	// First, calculate grid size in pixels
+	$grid: ($col-width * $column-num) + ($gutter-width * ($column-num - 1));
+	// Then, calculate the responsive grid 
+	$grid: ($grid / $width) * 100%;
+    
+    vertical-align: $vert;
+    width: $grid;
+    
+    & + & { margin-left: 2%; }
+}
+
+///////////////////////////////
+// fonts /////////////////////
+/////////////////////////////
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+$open: 'Open Sans', sans-serif; 
+
+//font weights:
+$thin: 300;
+$normal: 400;
+$bold: 800;
+
+///////////////////////////////
+// z-index ///////////////////
+/////////////////////////////
+
+$zBase: 100;
+$zPop: 400;
+$zOverlay: 600;
+$zOverContent: 800;
+
+
+
+%section {
+    display: block;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+html,
+body {
+    box-sizing: border-box;
+    font-size: 100%;
+    height: 100%; 
+    width: 100%;
+}
+
+*,
+*:before,
+*:after {  box-sizing: inherit; }
+
+
+//typography
+body {
+    font-family: $open;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6; 
+}
+
+h1, h2, h3 { 
+    font-weight: $bold; 
+    line-height: 1.2;
+}
+
+h2, h3 {
+    margin: 1.414em 0 0.5em;
+}
+
+h1 { 
+    font-size: 1.5em;
+    font-size: 6vw;
+    margin: 0 0 0.5em;
+    
+    @include bp(800) {
+        font-size: 2.25em;
+    }
+     
+    @include bp(1000) {
+        font-size: 3.375em;
+    }
+}
+
+h2 {
+    font-size: 1em;
+    @include bp(800) {
+        font-size: 1.5em;
+    }
+    
+    @include bp(1000) {
+        font-size: 2.25em;
+    }
+}
+
+h3 {
+    font-size: 0.75em;
+    @include bp(800) {
+        font-size: 1em;
+    }
+    
+    @include bp(1000) {
+        font-size: 1.5em;
+    }
+}
+
+p, ul { 
+    font-size: 0.75em;
+    margin-bottom: 0.75em;
+    
+    @include bp(500) {
+        font-size: 1em;
+    }
+    
+    @include bp(1300) {
+        font-size: 1.15em;
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
