@@ -48,9 +48,6 @@
 	    	</div>
 		</div>
 		
-		<!--THE FORM BEGINS -->
-    	<form action="" method="POST" id="payment-form">
-		
 		<div class="row">	
 			<div class="twelve columns">
 				<h2>WHAT'LL YOU PUT ON YOUR POSTCARD?<br />
@@ -58,8 +55,12 @@
 			</div>
 		</div>
 		
+		<!--THE FORM BEGINS -->
+    	<form action="" method="POST" id="payment-form">
+	    
 		<div class="row">
-					
+			
+			<!-- POSTCARD -->	
 			<div class="seven columns postcard">
 				<div class="postcard-note">
 					<p>{{to}},</p>
@@ -77,22 +78,22 @@
 				
 			</div>
 	    			
-            <!-- TO WHOM? -->
+            <!-- POSTCARD MSG FORM -->
 	        <div class="five columns">
 		        <label><small>WE USUALLY START WITH <span class="blue">DEAR</span></small></label>
-                <input v-model="to" style="width: 100%" placeholder="To" type="text" class="field text small" maxlength="36" tabindex="1" onkeyup="validateRange(4, 'character');" required />
+                <input v-model="to" style="width: 100%" placeholder="To" type="text" class="field text small send-to" maxlength="36" tabindex="1" onkeyup="validateRange(4, 'character');" required />
                 
                 
                 <!-- WRITTEN WORDS -->
                 <label><small>WRITE SOMETHING <span class="yellow">LOVELY</span>!</small> </label>          
                 
-				<textarea v-model="note" placeholder="Your note" style="height:300px; padding: 10px 6px" class="field textarea small" maxlength="580" spellcheck="true" rows="10" cols="50" tabindex="2" onkeyup="" required ></textarea>
+				<textarea v-model="note" placeholder="Your note" style="height:300px; padding: 10px 6px" class="field textarea small send-msg" data-stripe="metadata" maxlength="580" spellcheck="true" rows="10" cols="50" tabindex="2" onkeyup="" required ></textarea>
 				
 				
 				<!-- SIGN -->
 				<label><small>AND <span class="red">PLEASE SIGN</span> YOUR CARD</span>!</small> </label>          
                 
-				<input v-model="sign" style="width: 100%" placeholder="signed" type="text" class="field text small" maxlength="36" tabindex="3" onkeyup="validateRange(4, 'character');" required />
+				<input v-model="sign" style="width: 100%" placeholder="signed" type="text" class="field text small send-sign" maxlength="36" tabindex="3" onkeyup="validateRange(4, 'character');" required />
 				
 			
                 <!-- SEND TO ADDRESS -->
@@ -123,51 +124,52 @@
 		
 		<div class="row">
 		
-				<!--Start of Modal -->
-				<div class="modal">
-				    <input id="modal__trigger" class="price-button" type="checkbox" />
-				    <label for="modal__trigger">Send your future post to {{to}}</label>
-				    <div class="modal__overlay" role="dialog" aria-labelledby="modal__title" aria-describedby="modal_desc">
-				        <div class="modal__wrap">
-				            <label class="exit_modal" for="modal__trigger">&#10006;</label>
-				            <h2 id="modal__title">Payment Information</h2>
-				            
-								    <span class="payment-errors"></span>
-								
-								    <div class="form-row">
-								      <label>
-								        <span>Card Number</span>
-								        <input type="text" size="20" data-stripe="number"/>
-								      </label>
-								    </div>
-								
-								    <div class="form-row">
-								      <label>
-								        <span>CVC</span>
-								        <input type="text" size="4" data-stripe="cvc"/>
-								      </label>
-								    </div>
-								
-								    <div class="form-row">
-								        <span>Expiration (MM/YYYY)</span>
-								        <input type="text" size="2" data-stripe="exp-month"/>
-								      <span> / </span>
-								      <input type="text" size="4" data-stripe="exp-year"/>
-								    </div>
-								
-								    <button type="submit">Submit Payment</button>
-				            
-				        </div>
-				    </div>
-				</div>
-				<!--End of Modal -->               
+			<!--Start of Modal -->
+			<div class="modal">
+			    <input id="modal__trigger" class="price-button" type="checkbox" />
+			    <label for="modal__trigger">Send your future post to {{to}}</label>
+			    <div class="modal__overlay" role="dialog" aria-labelledby="modal__title" aria-describedby="modal_desc">
+			        <div class="modal__wrap">
+			            <label class="exit_modal" for="modal__trigger">&#10006;</label>
+			            <h2 id="modal__title">Payment Information</h2>
+			            
+							    <span class="payment-errors"></span>
+							
+							    <div class="form-row">
+							      <label>
+							        <span>Card Number</span>
+							        <input type="text" size="20" data-stripe="number" class="card-number"/>
+							      </label>
+							    </div>
+							
+							    <div class="form-row">
+							      <label>
+							        <span>CVC</span>
+							        <input type="text" size="4" data-stripe="cvc" class="card-cvc"/>
+							      </label>
+							    </div>
+							
+							    <div class="form-row">
+							        <span>Expiration (MM/YYYY)</span>
+							        <input type="text" size="2" data-stripe="exp-month" class="card-expiry-month"/>
+							      <span> / </span>
+							      <input type="text" size="4" data-stripe="exp-year" class="card-expiry-year"/>
+							    </div>
+							
+							    <button type="submit">Submit Payment</button>
+			            
+			        </div>
+			    </div>
+			</div>
+			<!--End of Modal -->               
 		
 		<!--<div class="price-button" style="padding: 30px 0 10px;">
 			<a class="action-button animate red" href="create.html">Send your future post to {{to}}</a>
 		</div>
 		-->
-			 </div>
-			 </form>
+		</div>
+		<!-- THE FORM ENDS -->
+		</form>
 </div>
 	<!-- end of container -->
 	

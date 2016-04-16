@@ -27,6 +27,19 @@
 		    form.find('button').prop('disabled', true);
 		
 		    Stripe.card.createToken(form, stripeResponseHandler);
+		    
+// 		    Stripe.card.createToken({
+// 			  number: $('.card-number').val(),
+// 			  cvc: $('.card-cvc').val(),
+// 			  exp_month: $('.card-expiry-month').val(),
+// 			  exp_year: $('.card-expiry-year').val(),
+// 			  metadata: {
+// 				  console.log('working metadata');
+// 				  to: $('.send-to').val(),
+// 				  msg: $('.send-msg').val(),
+// 				  sign: $('.send-sign').val()
+// 				  }
+// 			}, stripeResponseHandler);
 		
 		    // Prevent the form from submitting with the default action
 		    return false;
