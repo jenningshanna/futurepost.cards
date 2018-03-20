@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>FUTURE POSTCARDS, send postcards to the future</title>
+</head>
+	
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+	<!-- CSS -->
+    <link href="css/structure.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    
+    <!-- Awesome Popup Modal -->
+    <link href="css/modal-css/style.css" rel="stylesheet">
+    
+    <link href="css/skeleton/normalize.css" rel="stylesheet">
+	<link href="css/skeleton/skeleton.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro' rel='stylesheet' type='text/css'>	
+
+	<link rel="stylesheet" type="text/css" href="all.css" />
+	
+	<style >
+		.modal__wrap {
+		    max-width: 900px;
+		    text-align: left;
+		}
+	</style>
+
+<body>
+
+	<div class="container start-page" id="app">
+		<div class="row">
+			<div class="twelve columns">
+				
+				<a href="index.html"><img src="images/future-postman-header.png" alt="the future post man" /></a>
+			    <h1>FUTURE <span class="red">/</span> <span class="blue">POST</span></h1>
+						    
+	    	</div>
+		</div>
+		
+		<div class="row">	
+			<div class="twelve columns">
+				<h2>WHAT'LL YOU PUT ON YOUR POSTCARD?<br />
+				<!--<a>Also see our examples left for us from past time travelers.</a></h2>-->
+			</div>
+		</div>
+		
+		
+		
+		
+<form id="test-form">
+  
+  <div>
+    <input type="text" name="headline_1" placeholder="headline"/>
+  </div>
+
+  <div>
+    <input type="text" name="body_1" placeholder="body"/>
+  </div>
+  
+  <div>
+    <input type="text" name="name" placeholder="Name"/>
+  </div>
+
+  <div>
+    <button type="submit"id="submit-form">Submit</button>
+  </div>
+
+</form>
+		
+		<!--THE FORM BEGINS -->
+    	<form action="" method="POST" id="payment-form">
+	    
+		<div class="row">
+			
+			<!-- POSTCARD -->	
+			<div class="seven columns postcard">
+				<div class="postcard-note">
+					<p>{{to}},</p>
+					<p>{{note}}</p>
+					<p>~ {{sign}}</p>
+				</div>
+				<div class="postcard-addy">
+					<p>{{addy1}}</p>
+					<p>{{addy2}}</p>
+					<div>
+						<p>{{city}}, {{state}}</p>
+						<p>{{zip}}</p>
+					</div>
+				</div>
+				
+			</div>
+	    			
+            <!-- POSTCARD MSG FORM -->
+	        <div class="five columns">
+		        <label><small>WE USUALLY START WITH <span class="blue">DEAR</span></small></label>
+                <input v-model="to" style="width: 100%" placeholder="To" type="text" class="field text small send-to" maxlength="36" tabindex="1" onkeyup="validateRange(4, 'character');" required />
+                
+                
+                <!-- WRITTEN WORDS -->
+                <label><small>WRITE SOMETHING <span class="yellow">LOVELY</span>!</small> </label>          
+                
+				<textarea v-model="note" placeholder="Your note" style="height:300px; padding: 10px 6px" class="field textarea small send-msg" data-stripe="metadata" maxlength="580" spellcheck="true" rows="10" cols="50" tabindex="2" onkeyup="" required ></textarea>
+				
+				
+				<!-- SIGN -->
+				<label><small>AND <span class="red">PLEASE SIGN</span> YOUR CARD</span>!</small> </label>          
+                
+				<input v-model="sign" style="width: 100%" placeholder="signed" type="text" class="field text small send-sign" maxlength="36" tabindex="3" onkeyup="validateRange(4, 'character');" required />
+				
+			
+                <!-- SEND TO ADDRESS -->
+	               <div class="street-address-inputs">
+		        
+		        <label><small>LET'S <span class="blue">GEO-LOCATE</span> THEIR MAILBOX</small> </label>
+	                
+		                <input v-model="addy1" placeholder="Street Address" id="Field109" name="Field109" type="text" class="field text addr" tabindex="4" required />
+		                <input v-model="addy2" placeholder="Another Street Address" id="Field110" name="Field110" type="text" class="field text addr" placeholder="" tabindex="4" />
+		                
+		                <div class="address-inputs">
+		                	<input v-model="city" placeholder="City" id="Field111" name="Field111" type="text" class="field text addr" placeholder="" tabindex="5" required />
+							<input v-model="state" placeholder="State" id="Field112" name="Field112" type="text" class="field text addr" placeholder="" tabindex="6" required />
+							<input v-model="zip" placeholder="Zip" id="Field113" name="Field113" type="text" class="field text addr" placeholder="" maxlength="15" tabindex="7" required />
+							<small>U.S. ONLY, (sorry)</small>
+		                </div>    
+		            
+		                <div class="hide">
+			                <select id="Field114" name="Field114" class="field select addr" tabindex="8" >
+			                <option value="United States" selected="selected" >United States</option>
+			                </select>
+		               </div>
+
+	               </div>                
+        	</div>
+    
+		</div>
+		
+		<div class="row">
+		
+			<!--Start of Modal
+			<div class="modal">
+			    <input id="modal__trigger" class="price-button" type="checkbox" />
+			    <label for="modal__trigger">Send your future post to {{to}}</label>
+			    <div class="modal__overlay" role="dialog" aria-labelledby="modal__title" aria-describedby="modal_desc">
+			        <div class="modal__wrap">
+			            <label class="exit_modal" for="modal__trigger">&#10006;</label>
+			            <h2 id="modal__title">Payment Information</h2>
+			            
+							    <span class="payment-errors"></span>
+							
+							    <div class="form-row">
+							      <label>
+							        <span>Card Number</span>
+							        <input type="text" size="20" data-stripe="number" class="card-number"/>
+							      </label>
+							    </div>
+							
+							    <div class="form-row">
+							      <label>
+							        <span>CVC</span>
+							        <input type="text" size="4" data-stripe="cvc" class="card-cvc"/>
+							      </label>
+							    </div>
+							
+							    <div class="form-row">
+							        <span>Expiration (MM/YYYY)</span>
+							        <input type="text" size="2" data-stripe="exp-month" class="card-expiry-month"/>
+							      <span> / </span>
+							      <input type="text" size="4" data-stripe="exp-year" class="card-expiry-year"/>
+							    </div>
+							
+							    <button type="submit">Submit Payment</button>
+			            
+			        </div>
+			    </div>
+			</div>
+			End of Modal -->               
+		
+		<!--<div class="price-button" style="padding: 30px 0 10px;">
+			<a class="action-button animate red" href="create.html">Send your future post to {{to}}</a>
+		</div>
+		-->
+		</div>
+		<!-- THE FORM ENDS -->
+		</form>
+</div>
+	<!-- end of container -->
+	
+    <footer>
+		<img src="images/footer-stamp.png" alt="stamp in the footer" />
+		<p>POSTCARDS CUSTOMIZED BY YOU & SENT IN THE FUTURE.</p>
+<!--         <p>ABOUT FUTUREPOST.CARDS  |  HOW IT WORKS  |  EXAMPLES</p> -->
+        <p>&copy; FUTUREPOST.CARDS</p>
+    </footer>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.14/vue.min.js"></script>
+    <script type="text/javascript" src="js/vue-modules.js"></script>
+   
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/stripe.js"></script>
+	<script type="text/javascript" src="js/serializeObject.js"></script>
+	<script type="text/javascript" src="js/sheets.js"></script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116059293-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116059293-1');
+</script>
+
+	
+	<script>		
+		 $('*').focus(function(){
+		  $(this).attr("placeholder",'');
+		  });
+	</script>
+
+</body>
+</html>
