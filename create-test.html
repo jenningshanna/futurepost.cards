@@ -239,7 +239,7 @@ $('#submit-form').on('click', function(e) {
     dataType: "json",
     data: $form.serializeObject()
   }).success(
-    // do something
+    window.location.href = "thankyou.html"
   );
 })
 	</script>
