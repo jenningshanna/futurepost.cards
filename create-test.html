@@ -210,7 +210,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/stripe.js"></script>
 	<script type="text/javascript" src="js/serializeObject.js"></script>
-	<script type="text/javascript" src="js/sheets.js"></script>
+	<!--<script type="text/javascript" src="js/sheets.js"></script>-->
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116059293-1"></script>
@@ -227,6 +227,21 @@
 		 $('*').focus(function(){
 		  $(this).attr("placeholder",'');
 		  });
+		  
+		  var $form = $('form#test-form'),
+    url = 'https://script.google.com/macros/s/AKfycbzQe3juQFolzGWSm5Nfz0ao-KI0ogeSLbvWtQ-Mdyjx6IEu7GU/exec'
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).success(
+    // do something
+  );
+})
 	</script>
 
 </body>
