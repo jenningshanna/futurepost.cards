@@ -69,7 +69,7 @@
   </div>
   
   <div>
-    <input type="text" name="name" placeholder="Name"/>
+    <input type="text" name="name" placeholder="name"/>
   </div>
 
   <div>
@@ -228,7 +228,7 @@
 		  $(this).attr("placeholder",'');
 		  });
 		  
-		  var $form = $('form#test-form'),
+		  var $form = $('#test-form'),
     url = 'https://script.google.com/macros/s/AKfycbzQe3juQFolzGWSm5Nfz0ao-KI0ogeSLbvWtQ-Mdyjx6IEu7GU/exec'
 
 $('#submit-form').on('click', function(e) {
@@ -239,7 +239,7 @@ $('#submit-form').on('click', function(e) {
     dataType: "json",
     data: $form.serializeObject()
   }).success(
-	  print('submitted')
+	  console.log(jqxhr)
     //window.location.href = "thankyou.html"
   );
 })
